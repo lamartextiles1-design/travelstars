@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="facebook-domain-verification" content="0poweczanxt6h9rfy9hzcypqj6v4og" />
+    <title>Travelstars - Viajes y Aventuras Inolvidables</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #6A1B9A, #8E24AA, #AB47BC);
+            color: white;
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+    
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="20" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: sparkle 20s infinite linear;
+        }
+
+        @keyframes sparkle {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0px) rotate(360deg); }
+        }
+
+        .header-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            padding: 80px 0;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .logo-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(106, 27, 154, 0.95);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(171, 71, 188, 0.3);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.1);
+            color: #E1BEE7;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #6A1B9A;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
+            font-style: italic;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            margin-top: 40px;
+        }
+
+        .about-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        .experience-highlight {
+            background: linear-gradient(45deg, #AB47BC, #8E24AA);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(171, 71, 188, 0.3);
+        }
+
+        .experience-highlight h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-radius: 10px;
+            border-left: 5px solid #AB47BC;
+            transition: all 0.3s ease;
+            height: auto;
+            box-shadow: 0 4px 15px rgba(171, 71, 188, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #6A1B9A;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            padding: 8px 0;
+            color: #555;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .service-list li:before {
+            content: "✈";
+            color: #AB47BC;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Three Column Services Layout */
+        .services-overview {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .service-overview-card {
+            background: linear-gradient(45deg, #6A1B9A, #8E24AA);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(171, 71, 188, 0.2);
+        }
+
+        .service-overview-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #E1BEE7;
+        }
+
+        .service-overview-card ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .service-overview-card li {
+            padding: 5px 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .team-member {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #AB47BC;
+        }
+
+        .team-member h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #6A1B9A;
+            margin-bottom: 5px;
+        }
+
+        .team-member .position {
+            color: #AB47BC;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .team-member .quote {
+            font-style: italic;
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background: linear-gradient(45deg, #6A1B9A, #8E24AA);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+            color: #E1BEE7;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+
+        .contact-item i {
+            color: #E1BEE7;
+            margin-right: 15px;
+            margin-top: 3px;
+            width: 20px;
+        }
+
+        .contact-item span {
+            line-height: 1.6;
+        }
+
+        .business-hours {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .business-hours h4 {
+            color: #E1BEE7;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .business-hours p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .business-hours strong {
+            color: #E1BEE7;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .services-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .header-content {
+                padding: 40px 0;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Additional styling to match travel theme */
+        .highlight-text {
+            color: #AB47BC;
+            font-weight: 600;
+        }
+        
+        /* Travel Gallery Styles */
+        .travel-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(171, 71, 188, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(171, 71, 188, 0.3);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(106, 27, 154, 0.9), transparent);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-overlay h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #E1BEE7;
+        }
+        
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .mission-section {
+            background: linear-gradient(45deg, #AB47BC, #8E24AA);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(171, 71, 188, 0.3);
+        }
+
+        .mission-section h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            color: white;
+            text-decoration: none;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Responsive WhatsApp button */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                font-size: 26px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+  </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="home">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">TRAVELSTARS</h1>
+                <p class="logo-subtitle">Viajes y Aventuras Inolvidables</p>
+                <p class="tagline">Descubre el mundo con nosotros. Ofrecemos las mejores experiencias de viaje, desde destinos exóticos hasta aventuras únicas que crearán recuerdos para toda la vida.</p>
+      </div>
+    </div>
+  </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <ul class="nav-links">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#destinations">Destinos</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegir Travelstars?</h2>
+            <div class="about-content">
+                <div>
+                    <p class="about-text">
+                        Somos una agencia de viajes especializada en crear experiencias únicas e inolvidables. Ofrecemos una amplia selección de destinos y servicios de la más alta calidad, desde viajes de luna de miel hasta aventuras extremas que te llevarán a los lugares más increíbles del mundo.
+                    </p>
+                    <p class="about-text">
+                        Contamos con años de experiencia en el sector turístico. Nuestro equipo de expertos se dedica a diseñar el viaje perfecto para cada cliente, garantizando seguridad, comodidad y momentos únicos en cada aventura.
+                    </p>
+                </div>
+                <div>
+                    <div class="experience-highlight">
+                        <h3>Experiencias Premium</h3>
+              </div>
+                    <p class="about-text">
+                        Ofrecemos servicios integrales a través de nuestro <strong class="highlight-text">SISTEMA DE ATENCIÓN PERSONALIZADA</strong> para todas tus necesidades de viaje. Somos referentes en turismo de calidad y experiencias únicas.
+                    </p>
+                    <div class="mission-section">
+                        <h3>Nuestra Misión</h3>
+                        <p>Crear las experiencias de viaje más hermosas y memorables al mejor precio posible, sin comprometer la calidad, seguridad y satisfacción de nuestros clientes</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Destinos</h2>
+            <p class="section-subtitle">Descubre el destino perfecto para tu próxima aventura</p>
+
+            <!-- Three Column Overview -->
+            <div class="services-overview">
+                <div class="service-overview-card">
+                    <h4>Destinos Nacionales</h4>
+                    <ul>
+                        <li>Bariloche y la Patagonia</li>
+                        <li>Mendoza y sus viñedos</li>
+                        <li>Salta y el norte argentino</li>
+                        <li>Buenos Aires y alrededores</li>
+                        <li>Córdoba y las sierras</li>
+                    </ul>
+              </div>
+                <div class="service-overview-card">
+                    <h4>Destinos Internacionales</h4>
+                    <ul>
+                        <li>Europa clásica y moderna</li>
+                        <li>Estados Unidos y Canadá</li>
+                        <li>Destinos caribeños</li>
+                        <li>Asia y Oceanía</li>
+                        <li>África y aventuras únicas</li>
+                    </ul>
+            </div>
+                <div class="service-overview-card">
+                    <h4>Viajes Especiales</h4>
+                    <ul>
+                        <li>Lunas de miel románticas</li>
+                        <li>Viajes de graduación</li>
+                        <li>Aventuras extremas</li>
+                        <li>Turismo cultural</li>
+                        <li>Viajes corporativos</li>
+                    </ul>
+          </div>
+      </div>
+      
+            <!-- Gallery Section -->
+            <div class="travel-gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop" alt="Montañas y paisajes naturales">
+                    <div class="gallery-overlay">
+                        <h4>Aventuras en la Naturaleza</h4>
+                        <p>Descubre paisajes únicos y experiencias al aire libre</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=400&fit=crop" alt="Ciudades europeas">
+                    <div class="gallery-overlay">
+                        <h4>Ciudades Europeas</h4>
+                        <p>Historia, cultura y elegancia en cada esquina</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=400&fit=crop" alt="Playas tropicales">
+                    <div class="gallery-overlay">
+                        <h4>Playas Paradisíacas</h4>
+                        <p>Relajación y diversión en destinos tropicales</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=400&fit=crop" alt="Aventuras extremas">
+                    <div class="gallery-overlay">
+                        <h4>Aventuras Extremas</h4>
+                        <p>Adrenalina y emociones que nunca olvidarás</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=400&h=400&fit=crop" alt="Cultura y tradiciones">
+                    <div class="gallery-overlay">
+                        <h4>Cultura y Tradiciones</h4>
+                        <p>Sumérgete en la riqueza cultural del mundo</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Viajes personalizados">
+                    <div class="gallery-overlay">
+                        <h4>Viajes Personalizados</h4>
+                        <p>Tu sueño, nuestra creación</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Services Section -->
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Paquetes de Viaje Premium</h3>
+                    <p>Ofrecemos una amplia selección de paquetes de viaje de la más alta calidad para satisfacer todos los gustos y presupuestos:</p>
+                    <ul class="service-list">
+                        <li>Viajes todo incluido de lujo</li>
+                        <li>Paquetes de luna de miel románticos</li>
+                        <li>Viajes familiares y multigeneracionales</li>
+                        <li>Aventuras y deportes extremos</li>
+                        <li>Turismo cultural y educativo</li>
+                        <li>Viajes corporativos y de incentivo</li>
+                        <li>Destinos exóticos y únicos</li>
+                        <li>Viajes de graduación y celebración</li>
+                        <li>Seguros de viaje incluidos</li>
+                        <li>Asistencia 24/7 durante el viaje</li>
+                        <li>Asesoramiento personalizado</li>
+                    </ul>
+          </div>
+          
+                <div class="service-card">
+                    <h3>Servicios Especializados</h3>
+                    <p>Brindamos servicios profesionales para hacer de tu viaje una experiencia perfecta:</p>
+                    <ul class="service-list">
+                        <li>Reservas de hoteles y alojamiento</li>
+                        <li>Vuelos nacionales e internacionales</li>
+                        <li>Traslados y transporte terrestre</li>
+                        <li>Excursiones y tours guiados</li>
+                        <li>Visas y documentación</li>
+                        <li>Seguros de viaje especializados</li>
+                        <li>Asistencia médica internacional</li>
+                        <li>Asesoramiento en destinos</li>
+                    </ul>
+          </div>
+          
+                <div class="service-card">
+                    <h3>Viajes Personalizados</h3>
+                    <p>Creamos experiencias únicas y exclusivas adaptadas a tus gustos y necesidades específicas:</p>
+                    <ul class="service-list">
+                        <li>Consulta de viaje personalizada</li>
+                        <li>Itinerarios a medida</li>
+                        <li>Selección de alojamientos premium</li>
+                        <li>Experiencias exclusivas</li>
+                        <li>Seguimiento durante todo el viaje</li>
+                        <li>Modificaciones flexibles</li>
+                        <li>Entrega de documentación completa</li>
+                        <li>Soporte post-viaje</li>
+                    </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <p class="section-subtitle">Experiencia y calidad en cada servicio que ofrecemos</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Planificación de Viajes</h3>
+                    <p>Diseñamos itinerarios perfectos adaptados a tus necesidades, presupuesto y preferencias de viaje.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Reservas y Gestión</h3>
+                    <p>Nos encargamos de todas las reservas y gestiones necesarias para que solo te preocupes por disfrutar.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Asistencia 24/7</h3>
+                    <p>Te acompañamos durante todo tu viaje con soporte y asistencia disponible las 24 horas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <h2 class="section-title">Nuestro Equipo de Expertos</h2>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b332c1ee?w=150&h=150&fit=crop&crop=face" alt="María González">
+                    <h4>María González</h4>
+                    <p class="position">Directora y Especialista en Viajes</p>
+                    <p class="quote">"Cada viaje cuenta una historia única. Nuestro compromiso es ayudarte a crear la experiencia perfecta que refleje tus sueños y expectativas."</p>
+          </div>
+
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" alt="Carlos Rodríguez">
+                    <h4>Carlos Rodríguez</h4>
+                    <p class="position">Coordinador de Aventuras</p>
+                    <p class="quote">"La aventura se encuentra en cada destino. Cada viaje que organizamos es diseñado con pasión y atención al detalle."</p>
+            </div>
+
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face" alt="Ana Martínez">
+                    <h4>Ana Martínez</h4>
+                    <p class="position">Especialista en Destinos Europeos</p>
+                    <p class="quote">"Europa es eterna, al igual que los recuerdos que creamos. Te ayudo a descubrir los destinos más hermosos del continente."</p>
+            </div>
+
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="Diego Fernández">
+                    <h4>Diego Fernández</h4>
+                    <p class="position">Asesor de Viajes</p>
+                    <p class="quote">"Mi objetivo es brindarte una experiencia excepcional, desde la planificación hasta el regreso de tu viaje soñado."</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">¿Listo para tu próxima aventura?</h2>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Ubicación de Nuestra Agencia</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>1 de Mayo 3764, Santa Fe</span>
+        </div>
+        
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+5492235588742</span>
+            </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@travelstars.com</span>
+          </div>
+                    <div class="contact-item">
+                        <i class="fas fa-id-card"></i>
+                        <span>CUIL: 27447653767</span>
+          </div>
+        </div>
+        
+                <div class="contact-info">
+                    <div class="business-hours">
+                        <h4>Horarios de Atención</h4>
+                        <p><strong>Días de atención:</strong></p>
+                        <p>Lunes a Viernes: 9:00 a 19:00 hs</p>
+                        <p>Sábados: 9:00 a 16:00 hs</p>
+                        <br>
+                        <p><strong>Consultas y reservas:</strong></p>
+                        <p>Disponible en horarios de atención</p>
+                        <p>WhatsApp: +5492235588742</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Travelstars. Todos los derechos reservados</p>
+            <p>Viajes y aventuras inolvidables en Santa Fe</p>
+    </div>
+  </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scrolling effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(106, 27, 154, 0.98)';
+            } else {
+                nav.style.background = 'rgba(106, 27, 154, 0.95)';
+            }
+        });
+    </script>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5492235588742?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios%20de%20viaje" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
